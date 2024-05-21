@@ -16,33 +16,34 @@ Cloud Native infrastructure encompasses many, many things these days. We do not 
 
 To get a handle on who you are, what your drive is, and how we can best support your success we have a few asks.  **Disclaimer**, we live in the age of Google, and that's OK! It's totally fine to look things up as you go. Get as far as you can, and be honest with yourself about your time. We're happy to give you more if you need it, just communicate with us when you're ready! At a high level, we'd like you to attempt the following:
 
-1. Create Kubernetes cluster - Do this however you want (EKS, GKE, AKS, IKS, OKE, KOPS, OCP, Rancher, whatever! Lots of free 'credit' options out there.)
-    - (Note: A node with 4cpu and 8 gigs of ram should be fine to run the Sysdig agent on)
+1. Create Managed Kubernetes cluster in your cloud provider of choice - Do this however you want (AWS/EKS, Azure/AKS, GCP/GKE - Lots of free 'credit' options out there.)
+    - (Note: A node with 4cpu and 8 gigs of ram should be fine to run the Sysdig agent on with the below voting app)
     - If you're building in the cloud, and you're new to the cloud, learn about security and billing alerts!
     - Turn off or scale down your cluster when you're not using it, but **don't destroy it!**
 3. Request a Sysdig Trial, from your hiring team.
-4. Install the Sysdig Agent(s) to your Kubernetes cluster. Use the onboarding Wizard to help.
-5. Install the classic *voting app* into your K8s cluster (https://github.com/dockersamples/example-voting-app)
+4. Connect your cloud account to Sysdig using the onboarding Wizard.
+5. Install the Sysdig Agent(s) to your Kubernetes cluster, once again we suggest using the onboarding Wizard.
+6. Install the classic *voting app* into your K8s cluster (https://github.com/dockersamples/example-voting-app)
     - Clone the repo to your github
     - Expose the app so you can browse to the UI and see it working
-6. Get Creative and build some stuff in Sysdig.
-    - In Secure:
+7. Get Creative and build some stuff in Sysdig.
+    - In Sysdig Secure:
         - Scan the images being used for the Voting App, what do the results mean? Which one has the most Risk? Why?
-        - Bonus points if you setup a Github action to scan an image with our cli scanner
-        - Integrate IaC with the voting app in your github repo.
+        - Bonus points if you setup a Github action to build the vote, worker and result containers and scan them with our cli scanner
+        - Integrate Sysdig IaC with the voting app in your github repo.
         - Compliance? Setup a Zone for your App & repo. Configure a benchmark to run. Submit a PR to the voting app repo from Sysdig compliance 
-        - Enable Runtime Policies, generate some events. Be creative with the events you create and then. showus how you did it and why you think the activity maybe suspicious?
+        - Enable Runtime Policies, generate some events. Be creative with the events you create and then. Show us how you did it and why you think the activity maybe suspicious?
         - Activity audit! Why's that valuable?
-    - In Monitor:
-        - Advisor, what is the usage of your cluster vs the requiests and limits? What other interesting information can you find?
+    - In Sysdig Monitor:
+        - Advisor, what is the usage of your cluster vs the requests and limits? What other interesting information can you find?
         - Build a PromQL query using the query builder in the explore section of Sysdig Monitor using metrics from the Voting App (bonus points if you use StatsD metrics in a PromQL query)
         - Build a dashboard with your query + static metrics from Sysdig that relate multiple things together
         - Add views to the dashboard that might be interesting to a user
-7. Don't destroy your cluster! We'd like to look at it with you.
+8. Don't destroy your cluster! We'd like to look at it with you.
     - Hit some buttons and nav around things
     - Show off your namespaces
     - Pull some logs
-8. Feedback? 
+9. Feedback? 
     - How can we get better? 
     - How did you experience with Sysdig differ from your experience of any other similar solutions?
     - What suggestions do you have on this process? 
@@ -52,8 +53,9 @@ To get a handle on who you are, what your drive is, and how we can best support 
 
 By no means are we saying you need to do these things. These are resources you might find helpful to learn about K8s and the Cloud Native world.
 
-**Rancher 101** - https://community.suse.com/courses/4242073/content
-Crazy useful course to learn about K8s from start to finish (though Rancher slated, still a great overall course)
+**Sysdig - Learn Cloud Native** - https://sysdig.com/learn-cloud-native/
+
+**Sysdig Docs** - https://docs.sysdig.com/
 
 **Kube Academy** - https://kube.academy/
 
